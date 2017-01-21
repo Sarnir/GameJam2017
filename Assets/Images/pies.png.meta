@@ -1,9 +1,19 @@
 fileFormatVersion: 2
 guid: 523fa5c99c4234138ba6c35a6ba17997
-timeCreated: 1485001964
-licenseType: Pro
+timeCreated: 1485015042
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: pies0
+    21300002: pies_1
+    21300004: pies1
+    21300006: pies2
+    21300008: pies3
+    21300010: dedog1
+    21300012: dedog2
+    21300014: pies_7
+    21300016: pies_8
+    21300018: pies_9
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +44,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +68,134 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pies0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 418
+        height: 377
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pies_1
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 414
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pies1
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 87
+        width: 505
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pies2
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 74
+        width: 506
+        height: 473
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pies3
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 0
+        width: 478
+        height: 510
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dedog1
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 117
+        width: 337
+        height: 338
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: dedog2
+      rect:
+        serializedVersion: 2
+        x: 2454
+        y: 115
+        width: 364
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pies_8
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 99
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: pies_9
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 68
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
