@@ -16,25 +16,19 @@ public class CatController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.Alpha1))
+		if (InputController.IsConditionMet (CommandType.LowRoar))
+			Debug.Log ("ROAR");
+		else if (InputController.IsConditionMet (CommandType.Screech))
+			Debug.Log ("SCREEEECH");
+		else if (InputController.IsConditionMet (CommandType.Hiss))
+			Debug.Log ("HISSSSSSSS");
+	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Obstacle")
 		{
-			// render high pitch wave
-			throw new Exception("Glass breaker");
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha2))
-		{
-			// render medium pitch wave
-			throw new Exception("DEMEXICANIZER");
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha3))
-		{
-			// render high pitch wave
-			throw new Exception("Wall destroyer");
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha4))
-		{
-			// render high pitch wave
-			throw new Exception("OGÓREK PSIK");
+			Destroy(collision.gameObject);
 		}
 	}
 }

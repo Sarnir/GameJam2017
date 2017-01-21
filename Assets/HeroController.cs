@@ -16,11 +16,6 @@ public class HeroController : MonoBehaviour {
 
 	void Update ()
 	{
-		if (InputController.IsConditionMet (CommandType.LowRoar))
-			Debug.Log ("ROAR");
-		else if (InputController.IsConditionMet (CommandType.Screech))
-			Debug.Log ("SCREEEECH");
-		else if (InputController.IsConditionMet (CommandType.Hiss))
-			Debug.Log ("HISSSSSSSS");
+		
 	}
 }
