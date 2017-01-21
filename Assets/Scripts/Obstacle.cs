@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour {
+public class Obstacle : MonoBehaviour
+{
+	Transform Trans;
 
-	// Use this for initialization
-	void Start () {
-		
+	void Start()
+	{
+		Trans = GetComponent<Transform>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Update()
+	{
+		Trans.position = new Vector2(Trans.position.x - 10, Trans.position.y);
+		if (Trans.position.x < 0)
+		{
+			Destroy(gameObject);
+		}
 	}
 
 	public virtual Obstacle Spawn(Transform parent, Vector3 pos)
 	{
-		var spawn = Instantiate<Obstacle> (this, parent, true);
+		var spawn = Instantiate<Obstacle>(this, parent, true);
 		spawn.transform.position = pos;
 		return spawn;
 	}
