@@ -1,53 +1,62 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CatController : MonoBehaviour
 {
 	public WaveController WavePrefab;
 
-	// Use this for initialization
-	void Start()
-	{
+	public Animation GlassHit;
+	public Animation WallHit;
+	public Animation CucumberDeath;
 
-	}
+	public Animator CatAnimator;
 
-	// Update is called once per frame
 	void Update()
 	{
-		if (InputController.IsConditionMet (CommandType.LowRoar))
+		if (InputController.IsConditionMet(CommandType.LowRoar))
 		{
-			//Debug.Log ("ROAR");
-			ShowWave (CommandType.LowRoar);
+			ShowWave(CommandType.LowRoar);
 		}
-		else if (InputController.IsConditionMet (CommandType.Screech))
+		else if (InputController.IsConditionMet(CommandType.Screech))
 		{
-			//Debug.Log ("SCREEEECH");
-			ShowWave (CommandType.Screech);
+			ShowWave(CommandType.Screech);
 		}
-		else if (InputController.IsConditionMet (CommandType.Hiss))
+		else if (InputController.IsConditionMet(CommandType.Hiss))
 		{
-			//Debug.Log ("HISSSSSSSS");
-			ShowWave (CommandType.Hiss);
+			ShowWave(CommandType.Hiss);
+		}
+		else if (InputController.IsConditionMet(CommandType.SineWave))
+		{
+			ShowWave(CommandType.SineWave);
 		}
 		else
 		{
-			WavePrefab.gameObject.SetActive (false);
+			WavePrefab.gameObject.SetActive(false);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Obstacle")
+		if (collision.gameObject.tag == "Glass")
 		{
-			Destroy(collision.gameObject);
+
+		}
+		else if (collision.gameObject.tag == "Wall")
+		{
+			collision.gameObject.AddComponent<Animation>();
+		}
+		else if (collision.gameObject.tag == "Cucumber")
+		{
+			collision.gameObject.AddComponent<Animation>();
+		}
+		else if (collision.gameObject.tag == "Dog")
+		{
+			collision.gameObject.AddComponent<Animation>();
 		}
 	}
 
 	void ShowWave(CommandType type)
 	{
 		WavePrefab.WaveType = type;
-		WavePrefab.gameObject.SetActive (true);
+		WavePrefab.gameObject.SetActive(true);
 	}
 }

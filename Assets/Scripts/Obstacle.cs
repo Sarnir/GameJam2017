@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
 	public CommandType KilledByWaveType;
+
 	Transform Trans;
 	float DisappearPosition;
+
+	public bool Paused;
 
 	void Start()
 	{
@@ -16,6 +17,8 @@ public class Obstacle : MonoBehaviour
 
 	void Update()
 	{
+		if (Paused)
+			return;
 		Trans.position = new Vector2(Trans.position.x - 0.125f, Trans.position.y);
 		if (Trans.position.x < DisappearPosition)
 		{
@@ -30,6 +33,9 @@ public class Obstacle : MonoBehaviour
 		v3Right = new Vector3 (v3Right.x, .5f, Camera.main.transform.position.z);// + 8f + 6f);
 		v3Right = Camera.main.ViewportToWorldPoint(v3Right);
 
+		if (Paused)
+			return;
+
 		var spawn = Instantiate<Obstacle>(this, parent, true);
 		Debug.Log ("pos = " + pos + ", v3pos = " + v3Right);
 		pos.x = -v3Right.x;
@@ -38,12 +44,12 @@ public class Obstacle : MonoBehaviour
 
 	protected virtual void OnTriggerStay2D(Collider2D collider)
 	{
-		Debug.Log (name + " collided with " + collider.gameObject.tag);
+		Debug.Log(name + " collided with " + collider.gameObject.tag);
 		if (collider.gameObject.tag == "Wave")
 		{
-			var wave = collider.gameObject.GetComponent<WaveController> ();
+			var wave = collider.gameObject.GetComponent<WaveController>();
 			if (wave.WaveType == KilledByWaveType)
-				Destroy (gameObject);
+				Destroy(gameObject);
 		}
 	}
 }
