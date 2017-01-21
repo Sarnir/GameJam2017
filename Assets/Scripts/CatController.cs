@@ -18,17 +18,17 @@ public class CatController : MonoBehaviour
 	{
 		if (InputController.IsConditionMet (CommandType.LowRoar))
 		{
-			Debug.Log ("ROAR");
+			//Debug.Log ("ROAR");
 			ShowWave (CommandType.LowRoar);
 		}
 		else if (InputController.IsConditionMet (CommandType.Screech))
 		{
-			Debug.Log ("SCREEEECH");
+			//Debug.Log ("SCREEEECH");
 			ShowWave (CommandType.Screech);
 		}
 		else if (InputController.IsConditionMet (CommandType.Hiss))
 		{
-			Debug.Log ("HISSSSSSSS");
+			//Debug.Log ("HISSSSSSSS");
 			ShowWave (CommandType.Hiss);
 		}
 		else
@@ -47,7 +47,7 @@ public class CatController : MonoBehaviour
 
 	void ShowWave(CommandType type)
 	{
-		WavePrefab.waveType = type;
+		WavePrefab.WaveType = type;
 		WavePrefab.gameObject.SetActive (true);
 	}
 }

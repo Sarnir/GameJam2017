@@ -18,7 +18,7 @@ public class LevelController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Random.value < 0.05f)
+		if (Random.value < 0.01f)
 		{
 			if (Random.value < 1f / 3f)
 				DogPrefab.Spawn (transform, SpawnPos.position);

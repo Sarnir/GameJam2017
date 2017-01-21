@@ -19,9 +19,8 @@ public class DogController : Obstacle
 		Rigid.AddForce(Vector2.left * 5);
 	}
 
-	protected override void OnCollisionEnter2D(Collision2D collision)
+	protected void OnCollisionEnter2D(Collision2D collision)
 	{
-		base.OnCollisionEnter2D (collision);
 		if (collision.gameObject.tag == "Ground")
 		{
 			Rigid.AddForce(Vector2.up * 250);
