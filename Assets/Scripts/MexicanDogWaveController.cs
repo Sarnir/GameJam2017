@@ -47,7 +47,12 @@ public class MexicanDogWaveController : Obstacle
 
 	public override void Spawn(Transform parentTransform, Vector3 pos)
 	{
-		
+		var v3Right = new Vector3(Screen.width,0,0);
+		v3Right = Camera.main.ScreenToViewportPoint(v3Right);
+		v3Right = new Vector3 (v3Right.x, .5f, Camera.main.transform.position.z);// + 8f + 6f);
+		v3Right = Camera.main.ViewportToWorldPoint(v3Right);
+
+		pos.x = -v3Right.x;
 
 		if (instance == null)
 		{

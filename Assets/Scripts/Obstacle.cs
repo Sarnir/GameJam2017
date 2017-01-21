@@ -25,11 +25,18 @@ public class Obstacle : MonoBehaviour
 
 	public virtual void Spawn(Transform parent, Vector3 pos)
 	{
+		var v3Right = new Vector3(Screen.width,0,0);
+		v3Right = Camera.main.ScreenToViewportPoint(v3Right);
+		v3Right = new Vector3 (v3Right.x, .5f, Camera.main.transform.position.z);// + 8f + 6f);
+		v3Right = Camera.main.ViewportToWorldPoint(v3Right);
+
 		var spawn = Instantiate<Obstacle>(this, parent, true);
+		Debug.Log ("pos = " + pos + ", v3pos = " + v3Right);
+		pos.x = -v3Right.x;
 		spawn.transform.position = pos;
 	}
 
-	protected virtual void OnTriggerEnter2D(Collider2D collider)
+	protected virtual void OnTriggerStay2D(Collider2D collider)
 	{
 		Debug.Log (name + " collided with " + collider.gameObject.tag);
 		if (collider.gameObject.tag == "Wave")
