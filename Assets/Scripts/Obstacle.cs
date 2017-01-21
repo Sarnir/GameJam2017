@@ -37,14 +37,12 @@ public class Obstacle : MonoBehaviour
 			return;
 
 		var spawn = Instantiate<Obstacle>(this, parent, true);
-		Debug.Log ("pos = " + pos + ", v3pos = " + v3Right);
 		pos.x = -v3Right.x;
 		spawn.transform.position = pos;
 	}
 
 	protected virtual void OnTriggerStay2D(Collider2D collider)
 	{
-		Debug.Log(name + " collided with " + collider.gameObject.tag);
 		if (collider.gameObject.tag == "Wave")
 		{
 			var wave = collider.gameObject.GetComponent<WaveController>();
