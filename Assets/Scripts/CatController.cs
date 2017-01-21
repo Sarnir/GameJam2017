@@ -24,6 +24,10 @@ public class CatController : MonoBehaviour
 		{
 			ShowWave(CommandType.Hiss);
 		}
+		else if (InputController.IsConditionMet(CommandType.SineWave))
+		{
+			ShowWave(CommandType.SineWave);
+		}
 		else
 		{
 			WavePrefab.gameObject.SetActive(false);
