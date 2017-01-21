@@ -40,7 +40,7 @@ public class InputController : MonoBehaviour
 		{
 			if (instance.enableDebugKeys)
 			{
-				if (Input.GetKeyDown (instance.commands [type].requirement.debugKey))
+				if (Input.GetKey (instance.commands [type].requirement.debugKey))
 					return true;
 			}
 
