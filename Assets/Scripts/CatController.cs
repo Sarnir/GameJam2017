@@ -38,7 +38,7 @@ public class CatController : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Glass")
 		{
-
+			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Wall")
 		{
