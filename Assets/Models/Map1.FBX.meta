@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 5fb50a7faed824a468e497f5d1241d59
-timeCreated: 1485006903
+guid: d273f4e4d48024c06b3e29d547bd2d2d
+timeCreated: 1485007820
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
@@ -40,8 +40,7 @@ ModelImporter:
     100064: Cylinder020
     100066: //RootNode
     100068: Plane001
-    100070: Plane002
-    100072: Plane003
+    100070: Plane003
     400000: Box001
     400002: Box002
     400004: Box003
@@ -77,8 +76,7 @@ ModelImporter:
     400064: Cylinder020
     400066: //RootNode
     400068: Plane001
-    400070: Plane002
-    400072: Plane003
+    400070: Plane003
     2300000: Box001
     2300002: Box002
     2300004: Box003
@@ -113,8 +111,7 @@ ModelImporter:
     2300062: Cylinder019
     2300064: Cylinder020
     2300066: Plane001
-    2300068: Plane002
-    2300070: Plane003
+    2300068: Plane003
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -149,8 +146,7 @@ ModelImporter:
     3300062: Cylinder019
     3300064: Cylinder020
     3300066: Plane001
-    3300068: Plane002
-    3300070: Plane003
+    3300068: Plane003
     4300000: Plane001
     4300002: Cylinder001
     4300004: Cylinder002
@@ -167,26 +163,25 @@ ModelImporter:
     4300026: Box003
     4300028: Box004
     4300030: Box005
-    4300032: Plane002
-    4300034: Cylinder011
-    4300036: Cylinder012
-    4300038: Cylinder013
-    4300040: Cylinder014
-    4300042: Cylinder015
-    4300044: Cylinder016
-    4300046: Cylinder017
-    4300048: Cylinder018
-    4300050: Cylinder019
-    4300052: Cylinder020
-    4300054: Box006
-    4300056: Box007
-    4300058: Box008
-    4300060: Box009
-    4300062: Box010
-    4300064: Box011
-    4300066: Box012
-    4300068: Box013
-    4300070: Plane003
+    4300032: Cylinder011
+    4300034: Cylinder012
+    4300036: Cylinder013
+    4300038: Cylinder014
+    4300040: Cylinder015
+    4300042: Cylinder016
+    4300044: Cylinder017
+    4300046: Cylinder018
+    4300048: Cylinder019
+    4300050: Cylinder020
+    4300052: Box006
+    4300054: Box007
+    4300056: Box008
+    4300058: Box009
+    4300060: Box010
+    4300062: Box011
+    4300064: Box012
+    4300066: Box013
+    4300068: Plane003
   materials:
     importMaterials: 1
     materialName: 0

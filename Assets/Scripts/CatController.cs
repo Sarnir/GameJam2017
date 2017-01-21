@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CatController : MonoBehaviour
 {
-	// HOOKS FOR WAVES
+	public WaveController WavePrefab;
 
 	// Use this for initialization
 	void Start()
@@ -17,11 +17,24 @@ public class CatController : MonoBehaviour
 	void Update()
 	{
 		if (InputController.IsConditionMet (CommandType.LowRoar))
+		{
 			Debug.Log ("ROAR");
+			ShowWave (CommandType.LowRoar);
+		}
 		else if (InputController.IsConditionMet (CommandType.Screech))
+		{
 			Debug.Log ("SCREEEECH");
+			ShowWave (CommandType.Screech);
+		}
 		else if (InputController.IsConditionMet (CommandType.Hiss))
+		{
 			Debug.Log ("HISSSSSSSS");
+			ShowWave (CommandType.Hiss);
+		}
+		else
+		{
+			WavePrefab.gameObject.SetActive (false);
+		}
 	}
 
 	void OnCollisionEnter2D(Collision2D collision)
@@ -30,5 +43,11 @@ public class CatController : MonoBehaviour
 		{
 			Destroy(collision.gameObject);
 		}
+	}
+
+	void ShowWave(CommandType type)
+	{
+		WavePrefab.waveType = type;
+		WavePrefab.gameObject.SetActive (true);
 	}
 }
