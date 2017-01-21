@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogController : MonoBehaviour
+public class DogController : Obstacle
 {
 	Renderer Rend;
 	Rigidbody2D Rigid;

@@ -18,7 +18,7 @@ public class MexicanDogWaveController : MonoBehaviour
 
 	void Update()
 	{
-		if (DateTime.Now - TimeSpawned >= TimeSpan.FromSeconds(2))
+		if (DateTime.Now - TimeSpawned >= TimeSpan.FromSeconds(0.5))
 		{
 			if (DogsSpawned < DogCount)
 			{
