@@ -37,4 +37,12 @@ public class CatController : MonoBehaviour
 			throw new Exception("OGÓREK PSIK");
 		}
 	}
+
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Obstacle")
+		{
+			Destroy(collision.gameObject);
+		}
+	}
 }

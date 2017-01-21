@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: c027d4a9c0fb82841b305eb8afaa77c5
-timeCreated: 1484947219
+timeCreated: 1484992959
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -25,6 +25,7 @@ TextureImporter:
     21300036: dog2
     21300038: cloud1
     21300040: cloud2
+    21300042: logo
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -319,6 +320,19 @@ TextureImporter:
         y: 180
         width: 205
         height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: logo
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 243
+        width: 148
+        height: 113
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
