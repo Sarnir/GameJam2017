@@ -14,6 +14,8 @@ public class MexicanDogWaveController : Obstacle
 	Vector3 spawnPos;
 	bool spawn;
 
+	static MexicanDogWaveController instance;
+
 	void Start()
 	{
 		spawn = false;
@@ -38,15 +40,23 @@ public class MexicanDogWaveController : Obstacle
 			}
 			else
 			{
-				Destroy(gameObject);
+				spawn = false;
 			}
 		}
 	}
 
 	public override void Spawn(Transform parentTransform, Vector3 pos)
 	{
-		parent = parentTransform;
-		spawnPos = pos;
-		StartSpawn ();
+		
+
+		if (instance == null)
+		{
+			instance = Instantiate (this);
+		}
+
+		instance.parent = parentTransform;
+		instance.spawnPos = pos;
+
+		instance.StartSpawn ();
 	}
 }
