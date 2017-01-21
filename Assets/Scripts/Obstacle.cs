@@ -29,13 +29,13 @@ public class Obstacle : MonoBehaviour
 		spawn.transform.position = pos;
 	}
 
-	protected virtual void OnCollisionEnter2D(Collision2D collision)
+	protected virtual void OnTriggerEnter2D(Collider2D collider)
 	{
-		Debug.Log ("collision.collider.gameObject.tag = " + collision.collider.gameObject.tag);
-		if (collision.collider.gameObject.tag == "Wave")
+		Debug.Log (name + " collided with " + collider.gameObject.tag);
+		if (collider.gameObject.tag == "Wave")
 		{
-			var wave = collision.gameObject.GetComponent<WaveController> ();
-			if (wave.waveType == KilledByWaveType)
+			var wave = collider.gameObject.GetComponent<WaveController> ();
+			if (wave.WaveType == KilledByWaveType)
 				Destroy (gameObject);
 		}
 	}
