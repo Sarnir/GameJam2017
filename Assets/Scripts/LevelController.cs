@@ -23,7 +23,7 @@ public class LevelController : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (DateTime.Now - LastSpawned >= TimeSpan.FromSeconds(2))
+		if (DateTime.Now - LastSpawned >= TimeSpan.FromSeconds(1))
 		{
 			float random = UnityEngine.Random.value;
 			if (true) // może później szansa pojawienia się
@@ -35,7 +35,7 @@ public class LevelController : MonoBehaviour
 				else if (random < 0.75f)
 					GlassPrefab.Spawn(transform, SpawnPos.position);
 				else
-					GlassPrefab.Spawn(transform, SpawnPos.position);
+					CucumberPrefab.Spawn(transform, SpawnPos.position);
 
 				LastSpawned = DateTime.Now;
 			}

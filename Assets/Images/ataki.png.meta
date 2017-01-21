@@ -1,9 +1,25 @@
 fileFormatVersion: 2
 guid: dd3f5e96d8d4e489b8b83b71860f5134
-timeCreated: 1485015493
-licenseType: Pro
+timeCreated: 1485017407
+licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mexkiller1
+    21300002: mexkiller2
+    21300004: mexkiller3
+    21300006: mexkiller4
+    21300008: syk1
+    21300010: syk2
+    21300012: syk3
+    21300014: hi1
+    21300016: hi2
+    21300018: hi3
+    21300020: hi4
+    21300022: low1
+    21300024: low2
+    21300026: low3
+    21300028: low4
+    21300030: low5
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -34,7 +50,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +74,225 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mexkiller1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 821
+        width: 177
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mexkiller2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 780
+        width: 149
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mexkiller3
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 767
+        width: 173
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: mexkiller4
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 776
+        width: 213
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: syk1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 542
+        width: 101
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: syk2
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 551
+        width: 123
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: syk3
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 553
+        width: 170
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hi1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 322
+        width: 110
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hi2
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 322
+        width: 111
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hi3
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 322
+        width: 110
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hi4
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 322
+        width: 153
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: low1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 103
+        width: 153
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: low2
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 100
+        width: 153
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: low3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 72
+        width: 153
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: low4
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 70
+        width: 154
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: low5
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 70
+        width: 205
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
