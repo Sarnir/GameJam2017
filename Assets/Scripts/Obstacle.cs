@@ -21,14 +21,13 @@ public class Obstacle : MonoBehaviour
 		}
 	}
 
-	public virtual Obstacle Spawn(Transform parent, Vector3 pos)
+	public virtual void Spawn(Transform parent, Vector3 pos)
 	{
 		var spawn = Instantiate<Obstacle>(this, parent, true);
 		spawn.transform.position = pos;
-		return spawn;
 	}
 
-	protected void OnCollisionEnter2D(Collision2D collision)
+	protected virtual void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log ("collision.collider.gameObject.tag = " + collision.collider.gameObject.tag);
 		if (collision.collider.gameObject.tag == "Wave")

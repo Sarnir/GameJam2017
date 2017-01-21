@@ -3,26 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MexicanDogWaveController : MonoBehaviour
+public class MexicanDogWaveController : Obstacle
 {
-	public GameObject Dog;
+	public DogController Dog;
 	public int DogCount;
 	DateTime TimeSpawned;
 	int DogsSpawned;
 
+	Transform parent;
+	Vector3 spawnPos;
+	bool spawn;
+
 	void Start()
 	{
+		spawn = false;
+	}
+
+	void StartSpawn()
+	{
+		spawn = true;
 		TimeSpawned = DateTime.Now;
 		DogsSpawned = 0;
 	}
 
 	void Update()
 	{
-		if (DateTime.Now - TimeSpawned >= TimeSpan.FromSeconds(0.5))
+		if (spawn && DateTime.Now - TimeSpawned >= TimeSpan.FromSeconds(0.5))
 		{
 			if (DogsSpawned < DogCount)
 			{
-				Instantiate(Dog);
+				Dog.Spawn (parent, spawnPos);
 				TimeSpawned = DateTime.Now;
 				DogsSpawned++;
 			}
@@ -31,5 +41,12 @@ public class MexicanDogWaveController : MonoBehaviour
 				Destroy(gameObject);
 			}
 		}
+	}
+
+	public override void Spawn(Transform parentTransform, Vector3 pos)
+	{
+		parent = parentTransform;
+		spawnPos = pos;
+		StartSpawn ();
 	}
 }

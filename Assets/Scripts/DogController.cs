@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class DogController : Obstacle
 {
-	Renderer Rend;
 	Rigidbody2D Rigid;
 
 	// Use this for initialization
 	void Start()
 	{
-		Rend = GetComponent<Renderer>();
 		Rigid = GetComponent<Rigidbody2D>();
 	}
 
@@ -21,7 +19,7 @@ public class DogController : Obstacle
 		Rigid.AddForce(Vector2.left * 5);
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
+	protected override void OnCollisionEnter2D(Collision2D collision)
 	{
 		base.OnCollisionEnter2D (collision);
 		if (collision.gameObject.tag == "Ground")
