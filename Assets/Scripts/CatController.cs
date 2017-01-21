@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CatController : MonoBehaviour
 {
@@ -13,30 +10,23 @@ public class CatController : MonoBehaviour
 
 	public Animator CatAnimator;
 
-	// Use this for initialization
-	void Start()
-	{
-
-	}
-
-	// Update is called once per frame
 	void Update()
 	{
-		if (InputController.IsConditionMet (CommandType.LowRoar))
+		if (InputController.IsConditionMet(CommandType.LowRoar))
 		{
-			ShowWave (CommandType.LowRoar);
+			ShowWave(CommandType.LowRoar);
 		}
-		else if (InputController.IsConditionMet (CommandType.Screech))
+		else if (InputController.IsConditionMet(CommandType.Screech))
 		{
-			ShowWave (CommandType.Screech);
+			ShowWave(CommandType.Screech);
 		}
-		else if (InputController.IsConditionMet (CommandType.Hiss))
+		else if (InputController.IsConditionMet(CommandType.Hiss))
 		{
-			ShowWave (CommandType.Hiss);
+			ShowWave(CommandType.Hiss);
 		}
 		else
 		{
-			WavePrefab.gameObject.SetActive (false);
+			WavePrefab.gameObject.SetActive(false);
 		}
 	}
 
@@ -63,6 +53,6 @@ public class CatController : MonoBehaviour
 	void ShowWave(CommandType type)
 	{
 		WavePrefab.WaveType = type;
-		WavePrefab.gameObject.SetActive (true);
+		WavePrefab.gameObject.SetActive(true);
 	}
 }

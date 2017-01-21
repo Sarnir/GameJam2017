@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MexicanDogWaveController : Obstacle
@@ -34,7 +32,7 @@ public class MexicanDogWaveController : Obstacle
 		{
 			if (DogsSpawned < DogCount)
 			{
-				Dog.Spawn (parent, spawnPos);
+				Dog.Spawn(parent, spawnPos);
 				TimeSpawned = DateTime.Now;
 				DogsSpawned++;
 			}
@@ -47,16 +45,16 @@ public class MexicanDogWaveController : Obstacle
 
 	public override void Spawn(Transform parentTransform, Vector3 pos)
 	{
-		
+
 
 		if (instance == null)
 		{
-			instance = Instantiate (this);
+			instance = Instantiate(this);
 		}
 
 		instance.parent = parentTransform;
 		instance.spawnPos = pos;
 
-		instance.StartSpawn ();
+		instance.StartSpawn();
 	}
 }

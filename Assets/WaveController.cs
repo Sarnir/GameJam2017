@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveController : MonoBehaviour {
-
+public class WaveController : MonoBehaviour
+{
 	public CommandType WaveType
 	{
 		get
@@ -15,18 +15,18 @@ public class WaveController : MonoBehaviour {
 			waveType = value;
 			switch (waveType)
 			{
-			case CommandType.LowRoar:
-				sr.color = Color.red;
-				break;
-			case CommandType.Screech:
-				sr.color = Color.cyan;
-				break;
-			case CommandType.Hiss:
-				sr.color = Color.yellow;
-				break;
-			default:
-				sr.color = Color.white;
-				break;
+				case CommandType.LowRoar:
+					sr.color = Color.red;
+					break;
+				case CommandType.Screech:
+					sr.color = Color.cyan;
+					break;
+				case CommandType.Hiss:
+					sr.color = Color.yellow;
+					break;
+				default:
+					sr.color = Color.white;
+					break;
 			}
 		}
 	}
@@ -36,12 +36,14 @@ public class WaveController : MonoBehaviour {
 	SpriteRenderer sr;
 
 	// Use this for initialization
-	void Start () {
-		sr = GetComponent<SpriteRenderer> ();
+	void Start()
+	{
+		sr = GetComponent<SpriteRenderer>();
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
-		
+	void Update()
+	{
+
 	}
 }
