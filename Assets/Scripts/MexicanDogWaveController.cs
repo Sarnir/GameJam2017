@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MexicanDogWaveController : MonoBehaviour
+public class MexicanDogWaveController : Obstacle
 {
 	public GameObject Dog;
 	public int DogCount;

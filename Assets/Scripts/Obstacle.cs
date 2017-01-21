@@ -6,16 +6,18 @@ public class Obstacle : MonoBehaviour
 {
 	public CommandType KilledByWaveType;
 	Transform Trans;
+	float DisappearPosition;
 
 	void Start()
 	{
 		Trans = GetComponent<Transform>();
+		DisappearPosition = -Trans.position.x;
 	}
 
 	void Update()
 	{
-		Trans.position = new Vector2(Trans.position.x - 10, Trans.position.y);
-		if (Trans.position.x < 0)
+		Trans.position = new Vector2(Trans.position.x - 0.125f, Trans.position.y);
+		if (Trans.position.x < DisappearPosition)
 		{
 			Destroy(gameObject);
 		}
