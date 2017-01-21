@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DogController : MonoBehaviour
+public class DogController : Obstacle
 {
 	Renderer Rend;
 
@@ -21,6 +21,6 @@ public class DogController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		throw new Exception(collision.gameObject.tag);
+		//throw new Exception(collision.gameObject.tag);
 	}
 }
