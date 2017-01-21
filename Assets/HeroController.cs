@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class HeroController : MonoBehaviour {
 
-	FFT audioInput;
+	public CommandRequirement[] commandsReqs;
 
-	// Use this for initialization
-	void Start () {
+	FFT audioInput;
+	AudioCommand command;
+
+	void Start ()
+	{
 		Application.runInBackground = true;
-		audioInput = GetComponent<FFT> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		audioInput.GetAverageFrequency (10);
+
+	void Update ()
+	{
+		if (InputController.IsConditionMet (CommandType.LowRoar))
+			Debug.Log ("ROAR");
+		else if (InputController.IsConditionMet (CommandType.Screech))
+			Debug.Log ("SCREEEECH");
+		else if (InputController.IsConditionMet (CommandType.Hiss))
+			Debug.Log ("HISSSSSSSS");
 	}
 }

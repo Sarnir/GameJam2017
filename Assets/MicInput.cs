@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NAudio;
-using NAudio.Wave;
 
 public class MicInput : MonoBehaviour {
 

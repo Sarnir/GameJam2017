@@ -100,6 +100,14 @@ public class FFT : MonoBehaviour {
 		}
 	}
 
+	void OnGUI()
+	{
+		if (Application.isEditor)  // or check the app debug flag
+		{
+			GUI.Label(new Rect(30, 30, 300, 300), "Freq = " + pitchValue);
+		}
+	}
+
 	public float GetAverageFrequency(int samplesCount)
 	{
 		float average = 0;
@@ -118,8 +126,6 @@ public class FFT : MonoBehaviour {
 		average /= samplesCount;
 
 		//Debug.Log ("Avg freq = " + average);
-		if (average > 0)
-			Debug.Log(FrequencyToMidiCode (average));
 		
 		return average;
 	}
