@@ -7,6 +7,12 @@ public class CatController : MonoBehaviour
 {
 	public WaveController WavePrefab;
 
+	public Animation GlassHit;
+	public Animation WallHit;
+	public Animation CucumberDeath;
+
+	public Animator CatAnimator;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -18,17 +24,14 @@ public class CatController : MonoBehaviour
 	{
 		if (InputController.IsConditionMet (CommandType.LowRoar))
 		{
-			//Debug.Log ("ROAR");
 			ShowWave (CommandType.LowRoar);
 		}
 		else if (InputController.IsConditionMet (CommandType.Screech))
 		{
-			//Debug.Log ("SCREEEECH");
 			ShowWave (CommandType.Screech);
 		}
 		else if (InputController.IsConditionMet (CommandType.Hiss))
 		{
-			//Debug.Log ("HISSSSSSSS");
 			ShowWave (CommandType.Hiss);
 		}
 		else
@@ -39,9 +42,21 @@ public class CatController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Obstacle")
+		if (collision.gameObject.tag == "Glass")
 		{
-			Destroy(collision.gameObject);
+
+		}
+		else if (collision.gameObject.tag == "Wall")
+		{
+			collision.gameObject.AddComponent<Animation>();
+		}
+		else if (collision.gameObject.tag == "Cucumber")
+		{
+			collision.gameObject.AddComponent<Animation>();
+		}
+		else if (collision.gameObject.tag == "Dog")
+		{
+			collision.gameObject.AddComponent<Animation>();
 		}
 	}
 

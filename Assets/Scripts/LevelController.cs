@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
@@ -12,12 +13,18 @@ public class LevelController : MonoBehaviour
 
 	public Transform SpawnPos;
 
+	public GameObject SkyObject;
+	public GameObject HillsObject;
+	public GameObject GroundObject;
+
 	DateTime LastSpawned;
+	bool Paused;
 
 	// Use this for initialization
 	void Start()
 	{
 		LastSpawned = DateTime.Now;
+		Paused = false;
 	}
 
 	// Update is called once per frame
@@ -38,6 +45,25 @@ public class LevelController : MonoBehaviour
 					CucumberPrefab.Spawn(transform, SpawnPos.position);
 
 				LastSpawned = DateTime.Now;
+			}
+		}
+
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			SceneManager.LoadScene("Menu");
+		}
+		if (Input.GetKey(KeyCode.P))
+		{
+			if (!Paused)
+			{
+				Time.timeScale = 0;
+				//SkyObject.
+				Paused = true;
+			}
+			else
+			{
+				Time.timeScale = 1;
+				Paused = false;
 			}
 		}
 	}
