@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class CatController : MonoBehaviour
 {
@@ -10,11 +11,17 @@ public class CatController : MonoBehaviour
 
 	public Animator CatAnimator;
 
+	private List<string> tags = new List<string> { "Glass", "Wall", "Cucumber", "Dog" };
+
 	void Update()
 	{
 		if (InputController.IsConditionMet(CommandType.LowRoar))
 		{
 			ShowWave(CommandType.LowRoar);
+		}
+		else if (InputController.IsConditionMet(CommandType.SineWave))
+		{
+			ShowWave(CommandType.SineWave);
 		}
 		else if (InputController.IsConditionMet(CommandType.Screech))
 		{
@@ -24,10 +31,6 @@ public class CatController : MonoBehaviour
 		{
 			ShowWave(CommandType.Hiss);
 		}
-		else if (InputController.IsConditionMet(CommandType.SineWave))
-		{
-			ShowWave(CommandType.SineWave);
-		}
 		else
 		{
 			WavePrefab.gameObject.SetActive(false);
@@ -36,21 +39,9 @@ public class CatController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.tag == "Glass")
+		if (tags.Contains(collision.gameObject.tag))
 		{
-			collision.gameObject.AddComponent<Animation>();
-		}
-		else if (collision.gameObject.tag == "Wall")
-		{
-			collision.gameObject.AddComponent<Animation>();
-		}
-		else if (collision.gameObject.tag == "Cucumber")
-		{
-			collision.gameObject.AddComponent<Animation>();
-		}
-		else if (collision.gameObject.tag == "Dog")
-		{
-			collision.gameObject.AddComponent<Animation>();
+			// let CatAnimator play appropriate animation
 		}
 	}
 
