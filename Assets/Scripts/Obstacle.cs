@@ -19,7 +19,7 @@ public class Obstacle : MonoBehaviour
 	{
 		if (Paused)
 			return;
-		Trans.position = new Vector2(Trans.position.x - 0.125f, Trans.position.y);
+		Trans.position = new Vector3(Trans.position.x - 0.125f, Trans.position.y, Trans.position.z);
 		if (Trans.position.x < DisappearPosition)
 		{
 			Destroy(gameObject);
@@ -28,13 +28,13 @@ public class Obstacle : MonoBehaviour
 
 	public virtual void Spawn(Transform parent, Vector3 pos)
 	{
+		if (Paused)
+			return;
+		
 		var v3Right = new Vector3(Screen.width,0,0);
 		v3Right = Camera.main.ScreenToViewportPoint(v3Right);
 		v3Right = new Vector3 (v3Right.x, .5f, Camera.main.transform.position.z);// + 8f + 6f);
 		v3Right = Camera.main.ViewportToWorldPoint(v3Right);
-
-		if (Paused)
-			return;
 
 		var spawn = Instantiate<Obstacle>(this, parent, true);
 		pos.x = -v3Right.x;
