@@ -8,6 +8,7 @@ public class Obstacle : MonoBehaviour
 	float DisappearPosition;
 
 	public bool Paused;
+	public float ObstacleSpeed;
 
 	void Start()
 	{
@@ -19,7 +20,7 @@ public class Obstacle : MonoBehaviour
 	{
 		if (Paused)
 			return;
-		Trans.position = new Vector3(Trans.position.x - 0.125f, Trans.position.y, Trans.position.z);
+		Trans.position = new Vector3(Trans.position.x - ObstacleSpeed, Trans.position.y, Trans.position.z);
 		if (Trans.position.x < DisappearPosition)
 		{
 			Destroy(gameObject);

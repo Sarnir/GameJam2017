@@ -37,32 +37,31 @@ public class CatController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		Debug.Log ("OnCollisionEnter with " + collision.gameObject.tag);
 		if (collision.gameObject.tag == "Glass")
 		{
-			Die ();
+			Die();
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Wall")
 		{
-			Die ();
+			Die();
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Cucumber")
 		{
-			Die ();
+			Die();
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Dog")
 		{
-			Die ();
+			Die();
 			collision.gameObject.AddComponent<Animation>();
 		}
 	}
 
 	void Die()
 	{
-		SceneManager.LoadScene("Menu");
+		SceneManager.LoadScene("GameOver");
 	}
 
 	void ShowWave(CommandType type)
