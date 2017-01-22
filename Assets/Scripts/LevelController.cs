@@ -30,7 +30,7 @@ public class LevelController : MonoBehaviour
 	{
 		if (!Paused)
 		{
-			if (DateTime.Now - LastSpawned >= TimeSpan.FromSeconds(1))
+			if (DateTime.Now - LastSpawned >= TimeSpan.FromSeconds(3))
 			{
 				float random = UnityEngine.Random.value;
 				if (true) // może później szansa pojawienia się
