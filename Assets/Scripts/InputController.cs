@@ -34,6 +34,17 @@ public class InputController : MonoBehaviour
 		commands.Add(command.Type, command);
 	}
 
+	public static CommandRequirement GetCommandReqs(CommandType type)
+	{
+		for (int i = 0; i < instance.commandsReqs.Length; i++)
+		{
+			if (instance.commandsReqs [i].type == type)
+				return instance.commandsReqs [i];
+		}
+
+		return null;
+	}
+		
 	public static bool IsConditionMet(CommandType type)
 	{
 		if (instance.commands.ContainsKey(type))

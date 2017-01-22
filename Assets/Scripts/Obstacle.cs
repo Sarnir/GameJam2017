@@ -13,6 +13,9 @@ public class Obstacle : MonoBehaviour
 	{
 		Trans = GetComponent<Transform>();
 		DisappearPosition = -Trans.position.x;
+
+		var freqbar = GetComponentInChildren<FrequencyBar> ();
+		freqbar.SetCommand (KilledByWaveType);
 	}
 
 	void Update()

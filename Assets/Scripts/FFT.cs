@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FFT : MonoBehaviour {
+public class FFT : MonoBehaviour
+{
+	public static float CurrentPitch;
 
 	int qSamples = 1024;  // array size
 	float refValue = 0.1f; // RMS value for 0 dB
@@ -83,6 +85,7 @@ public class FFT : MonoBehaviour {
 			freqN += 0.5f*(dR*dR - dL*dL);
 		}
 		pitchValue = freqN*(fSample/2)/qSamples; // convert index to frequency
+		CurrentPitch = pitchValue;
 	}
 
 	void DrawDebugGraph()

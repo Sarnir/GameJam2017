@@ -7,6 +7,8 @@ public class DogController : Obstacle
 	void Start()
 	{
 		Rigid = GetComponent<Rigidbody2D>();
+		var freqbar = GetComponentInChildren<FrequencyBar> ();
+		freqbar.SetCommand (KilledByWaveType);
 	}
 	
 	void Update()
