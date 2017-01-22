@@ -11,6 +11,15 @@ public class CatController : MonoBehaviour
 
 	public Animator CatAnimator;
 
+	bool cucumberWasDefeated;
+	bool showCucumberTutorial;
+
+	void Start()
+	{
+		cucumberWasDefeated = true;
+		showCucumberTutorial = false;
+	}
+
 	void Update()
 	{
 		if (InputController.IsConditionMet(CommandType.LowRoar))
@@ -23,6 +32,13 @@ public class CatController : MonoBehaviour
 		}
 		else if (InputController.IsConditionMet(CommandType.Hiss))
 		{
+			if (showCucumberTutorial)
+			{
+				showCucumberTutorial = false;
+				cucumberWasDefeated = true;
+				LevelController.ForcePause = true;
+			}
+
 			ShowWave(CommandType.Hiss);
 		}
 		else if (InputController.IsConditionMet(CommandType.SineWave))
@@ -49,13 +65,30 @@ public class CatController : MonoBehaviour
 		}
 		else if (collision.gameObject.tag == "Cucumber")
 		{
-			Die();
+			if (cucumberWasDefeated)
+				Die ();
+			else
+			{
+				showCucumberTutorial = true;
+				LevelController.ForcePause = true;
+			}
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Dog")
 		{
 			Die();
 			collision.gameObject.AddComponent<Animation>();
+		}
+	}
+
+	void OnGUI()
+	{
+		if (showCucumberTutorial)
+		{
+			var guistyle = new GUIStyle ();
+			guistyle.fontSize = 60;
+			guistyle.alignment = TextAnchor.MiddleCenter;
+			GUI.Label (new Rect (0, 0, Screen.width, Screen.height / 5f), "HISS LIKE A CAT!", guistyle);
 		}
 	}
 
