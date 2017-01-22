@@ -21,12 +21,14 @@ public class LevelController : MonoBehaviour
 	DateTime LevelStart;
 	DateTime LastSpawned;
 	bool Paused;
+	public static bool ForcePause;
 
 	void Start()
 	{
 		LevelStart = DateTime.Now;
 		LastSpawned = DateTime.Now;
 		Paused = false;
+		ForcePause = false;
 	}
 
 	void Update()
@@ -47,7 +49,9 @@ public class LevelController : MonoBehaviour
 				{
 					float random = UnityEngine.Random.Range(0.0f, (float)CurrentLevel);
 					if (random <= 1.0f)
-						CucumberPrefab.Spawn(transform, SpawnPos.position);
+					{
+						CucumberPrefab.Spawn (transform, SpawnPos.position);
+					}
 					else if (random <= 2.0f)
 						GlassPrefab.Spawn(transform, SpawnPos.position);
 					else if (random <= 3.0f)
@@ -69,36 +73,42 @@ public class LevelController : MonoBehaviour
 		}
 	}
 
+	void TogglePause()
+	{
+		if (!Paused)
+		{
+			Obstacle[] obstacles = GetComponentsInChildren<Obstacle>();
+			foreach (Obstacle o in obstacles)
+			{
+				o.Paused = true;
+			}
+			//Time.timeScale = 0;
+			SkyController.SpeedModifier = 0;
+			HillsController.SpeedModifier = 0;
+			GroundController.SpeedModifier = 0;
+			Paused = true;
+		}
+		else
+		{
+			Obstacle[] obstacles = GetComponentsInChildren<Obstacle>();
+			foreach (Obstacle o in obstacles)
+			{
+				o.Paused = false;
+			}
+			Time.timeScale = 1;
+			SkyController.SpeedModifier = 1;
+			HillsController.SpeedModifier = 2;
+			GroundController.SpeedModifier = 5;
+			Paused = false;
+		}
+	}
+
 	private void HandlePause()
 	{
-		if (Input.GetKeyUp(KeyCode.P))
+		if (ForcePause || Input.GetKeyUp(KeyCode.P))
 		{
-			if (!Paused)
-			{
-				Obstacle[] obstacles = GetComponentsInChildren<Obstacle>();
-				foreach (Obstacle o in obstacles)
-				{
-					o.Paused = true;
-				}
-				Time.timeScale = 0;
-				SkyController.SpeedModifier = 0;
-				HillsController.SpeedModifier = 0;
-				GroundController.SpeedModifier = 0;
-				Paused = true;
-			}
-			else
-			{
-				Obstacle[] obstacles = GetComponentsInChildren<Obstacle>();
-				foreach (Obstacle o in obstacles)
-				{
-					o.Paused = false;
-				}
-				Time.timeScale = 1;
-				SkyController.SpeedModifier = 1;
-				HillsController.SpeedModifier = 2;
-				GroundController.SpeedModifier = 5;
-				Paused = false;
-			}
+			ForcePause = false;
+			TogglePause ();
 		}
 	}
 

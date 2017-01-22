@@ -8,26 +8,23 @@ public class IntroController : MonoBehaviour
 	public int PanelsAmount;
 
 	int Counter;
+	public MovieTexture movTexture;
 
 	void Start ()
 	{
-		Counter = 1;
+		movTexture.Play();
+	}
+
+	void OnGUI()
+	{
+		GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),movTexture,ScaleMode.ScaleToFit);
 	}
 	
 	void Update ()
 	{
-		if (Input.GetKeyUp(KeyCode.Space))
+		if (movTexture.isPlaying == false || Input.GetKeyUp(KeyCode.Space))
 		{
-			if (Counter < PanelsAmount)
-			{
-				// change history comic panel
-				Counter++;
-			}
-			else
-			{
-				SceneManager.LoadScene("Menu");
-			}
-
+			SceneManager.LoadScene("Menu");
 		}
 	}
 }
