@@ -7,7 +7,7 @@ public class ScrollController : MonoBehaviour
 {
 	public float SpeedModifier;
 	Vector3 Obj1startPos;
-	Vector3 Obj2startPos;
+	//Vector3 Obj2startPos;
 	public Transform obj1;
 	public Transform obj2;
 	float width;
@@ -19,7 +19,7 @@ public class ScrollController : MonoBehaviour
 	void Start()
 	{
 		Obj1startPos = obj1.position;
-		Obj2startPos = obj2.position;
+		//Obj2startPos = obj2.position;
 		width = obj2.position.x - obj1.position.x;
 		leftObj = obj1;
 		rightObj = obj2;

@@ -15,45 +15,62 @@ public class LevelController : MonoBehaviour
 	public ScrollController HillsController;
 	public ScrollController GroundController;
 
+	public int SecondsBetweenSpawn;
+	public int CurrentLevel;
+
+	DateTime LevelStart;
 	DateTime LastSpawned;
 	bool Paused;
 
-	// Use this for initialization
 	void Start()
 	{
+		LevelStart = DateTime.Now;
 		LastSpawned = DateTime.Now;
 		Paused = false;
 	}
 
-	// Update is called once per frame
 	void Update()
+	{
+		HandleLevelChange();
+		HandleSpawn();
+		HandleExit();
+		HandlePause();
+	}
+
+	private void HandleSpawn()
 	{
 		if (!Paused)
 		{
-			if (DateTime.Now - LastSpawned >= TimeSpan.FromSeconds(3))
+			if (DateTime.Now - LastSpawned >= TimeSpan.FromSeconds(SecondsBetweenSpawn))
 			{
-				float random = UnityEngine.Random.value;
-				if (true) // może później szansa pojawienia się
+				if (true) //UnityEngine.Random.value > 0.3f) // chance to spawn
 				{
-					if (random < 0.25f)
-						DogPrefab.Spawn(transform, SpawnPos.position);
-					else if (random < 0.5f)
-						WallPrefab.Spawn(transform, SpawnPos.position);
-					else if (random < 0.75f)
-						GlassPrefab.Spawn(transform, SpawnPos.position);
-					else
+					float random = UnityEngine.Random.Range(0.0f, (float)CurrentLevel);
+					if (random <= 1.0f)
 						CucumberPrefab.Spawn(transform, SpawnPos.position);
+					else if (random <= 2.0f)
+						GlassPrefab.Spawn(transform, SpawnPos.position);
+					else if (random <= 3.0f)
+						DogPrefab.Spawn(transform, SpawnPos.position);
+					else
+						WallPrefab.Spawn(transform, SpawnPos.position);
 
 					LastSpawned = DateTime.Now;
 				}
 			}
 		}
+	}
 
+	private static void HandleExit()
+	{
 		if (Input.GetKeyUp(KeyCode.Escape))
 		{
 			SceneManager.LoadScene("Menu");
 		}
+	}
 
+	private void HandlePause()
+	{
 		if (Input.GetKeyUp(KeyCode.P))
 		{
 			if (!Paused)
@@ -83,5 +100,38 @@ public class LevelController : MonoBehaviour
 				Paused = false;
 			}
 		}
+	}
+
+	private void HandleLevelChange()
+	{
+		if (!Paused && DateTime.Now - LevelStart > TimeSpan.FromSeconds(CurrentLevel * CurrentLevel * 5))
+		{
+			CurrentLevel++;
+			if (CurrentLevel == 2)
+			{
+				Debug.Log("spawni pirszego szybę");
+				SpawnFirstOfType(GlassPrefab);
+				// load synthwave 1
+			}
+			else if (CurrentLevel == 3)
+			{
+				Debug.Log("spawni pirszego psa");
+				SpawnFirstOfType(DogPrefab);
+				// load normal 2
+			}
+			else
+			{
+				Debug.Log("spawni pirszego ściana");
+				SpawnFirstOfType(WallPrefab);
+				// load synthwave 2
+			}
+			LevelStart = DateTime.Now;
+		}
+	}
+
+	private void SpawnFirstOfType(Obstacle obstacle)
+	{
+		obstacle.Spawn(transform, SpawnPos.position);
+		LastSpawned = DateTime.Now;
 	}
 }
