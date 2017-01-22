@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CatController : MonoBehaviour
 {
@@ -36,22 +37,32 @@ public class CatController : MonoBehaviour
 
 	void OnCollisionEnter2D(Collision2D collision)
 	{
+		Debug.Log ("OnCollisionEnter with " + collision.gameObject.tag);
 		if (collision.gameObject.tag == "Glass")
 		{
+			Die ();
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Wall")
 		{
+			Die ();
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Cucumber")
 		{
+			Die ();
 			collision.gameObject.AddComponent<Animation>();
 		}
 		else if (collision.gameObject.tag == "Dog")
 		{
+			Die ();
 			collision.gameObject.AddComponent<Animation>();
 		}
+	}
+
+	void Die()
+	{
+		SceneManager.LoadScene("Menu");
 	}
 
 	void ShowWave(CommandType type)
