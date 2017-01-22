@@ -114,7 +114,7 @@ public class LevelController : MonoBehaviour
 
 	private void HandleLevelChange()
 	{
-		if (!Paused && DateTime.Now - LevelStart > TimeSpan.FromSeconds(CurrentLevel * CurrentLevel * 5))
+		if (!Paused && DateTime.Now - LevelStart > TimeSpan.FromSeconds( CurrentLevel * 6))
 		{
 			CurrentLevel++;
 			if (CurrentLevel == 2)
